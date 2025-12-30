@@ -1,0 +1,15 @@
+{
+  "projects": {
+    "default": "afrikantahti-19322"
+  },
+  "targets": {
+    "afrikantahti-19322": {
+      "hosting": {
+        "game": [
+          "afrikantahti"
+        ]
+      }
+    }
+  },
+  "etags": {}
+}

@@ -1,0 +1,218 @@
+:root {
+  --color-sand: #f4e4bc;
+  --color-sand-dark: #e0cca0;
+  --color-ocean: #8ab6d6;
+  --color-gold: #ffd700;
+  --color-gold-dim: #c5a600;
+  --color-dark-text: #2c1a0b;
+  --color-land: #d8c39e;
+  --color-danger: #e74c3c;
+  --color-safe: #2ecc71;
+
+  --font-main: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--color-sand);
+  color: var(--color-dark-text);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#root {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  font-family: inherit;
+}
+
+@keyframes pulse-vibrate {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    box-shadow: 0 0 0 0 rgba(241, 196, 15, 0.7);
+  }
+
+  50% {
+    transform: translate(-50%, -50%) scale(1.6);
+    box-shadow: 0 0 30px 15px rgba(241, 196, 15, 0);
+  }
+
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    box-shadow: 0 0 0 0 rgba(241, 196, 15, 0);
+  }
+}
+
+@keyframes pulse-vibrate-blue {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    box-shadow: 0 0 0 0 rgba(52, 152, 219, 0.7);
+  }
+
+  50% {
+    transform: translate(-50%, -50%) scale(1.4);
+    box-shadow: 0 0 25px 10px rgba(52, 152, 219, 0);
+  }
+
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    box-shadow: 0 0 0 0 rgba(52, 152, 219, 0);
+  }
+}
+
+@keyframes wealthPulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(241, 196, 15, 0.8), 0 0 10px rgba(241, 196, 15, 0.8);
+    transform: scale(1);
+  }
+
+  50% {
+    box-shadow: 0 0 0 20px rgba(241, 196, 15, 0), 0 0 20px rgba(241, 196, 15, 0.5);
+    transform: scale(1.3);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba(241, 196, 15, 0), 0 0 10px rgba(241, 196, 15, 0);
+    transform: scale(1);
+  }
+}
+
+.token-pulse {
+  animation: pulse-vibrate 1.2s infinite ease-out;
+  z-index: 50;
+  /* Ensure it pops over others */
+}
+
+.airport-pulse {
+  animation: pulse-vibrate-blue 2s infinite ease-out;
+  z-index: 40;
+}
+
+@keyframes diceRoll {
+
+  0%,
+  100% {
+    transform: rotate(0deg) scale(1);
+  }
+
+  25% {
+    transform: rotate(20deg) scale(1.15);
+  }
+
+  50% {
+    transform: rotate(-20deg) scale(1.25);
+  }
+
+  75% {
+    transform: rotate(15deg) scale(1.15);
+  }
+}
+
+.dice-rolling {
+  display: inline-block;
+}
+
+/* Control Panel Desktop Styles (Default) */
+.control-panel {
+  position: fixed;
+  top: 70px;
+  right: 10px;
+  z-index: 90;
+  padding: 1rem;
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(5px);
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  width: 160px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  /* border will be set inline for dynamic color */
+}
+
+/* Control Panel Section Styles */
+.cp-player-info {
+  text-align: center;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 0.4rem;
+}
+
+.cp-player-avatar {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: 2px solid white;
+  margin: 0 auto 0.3rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  /* background-color set inline */
+}
+
+.cp-player-name {
+  margin: 0 0 0.2rem;
+  font-size: 1rem;
+  /* color set inline */
+}
+
+.cp-dice-container {
+  text-align: center;
+  padding: 0.3rem 0;
+}
+
+.cp-dice-box {
+  min-height: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+
+.cp-status {
+  font-size: 0.85rem;
+  color: #7f8c8d;
+  text-align: center;
+  font-style: italic;
+}
+
+.cp-dice-value {
+  width: 60px;
+  height: 60px;
+  background-color: white;
+  border: 3px solid #2c3e50;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #2c3e50;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.cp-dice-label {
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #27ae60;
+  margin-top: 2px;
+}

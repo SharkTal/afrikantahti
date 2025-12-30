@@ -1,0 +1,176 @@
+/* Mobile Optimization */
+
+/* Only apply on screens smaller than 768px */
+@media screen and (max-width: 768px) {
+
+    /* Prevent horizontal scroll on body but allow it on board */
+    body {
+        overflow-x: hidden;
+        position: fixed;
+        width: 100%;
+        height: 100%;
+    }
+
+    /* App Container Layout */
+    .app-container {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+    }
+
+    /* Header Compact Mode */
+    .game-header {
+        height: 50px;
+        padding: 0 8px !important;
+        flex-shrink: 0;
+    }
+
+    .game-header h1 {
+        font-size: 0.9rem !important;
+    }
+
+    /* Main Content Area */
+    .game-content {
+        flex: 1;
+        display: block !important;
+        /* Stack vertically */
+        padding: 0 !important;
+        /* Remove gap */
+        overflow: hidden;
+        position: relative;
+    }
+
+    /* Scrollable Board Wrapper */
+    .board-wrapper {
+        width: 100% !important;
+        min-width: unset !important;
+        height: 100%;
+        overflow: auto;
+        -webkit-overflow-scrolling: touch;
+        /* Smooth scroll iOS */
+        border: none !important;
+        border-radius: 0 !important;
+        /* Center board if possible */
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+    }
+
+    .board-container {
+        /* Board stays large but we can zoom it out slightly if needed */
+        /* scale: 0.8; */
+        /* Optional: Start zoomed out */
+        transform-origin: top left;
+    }
+
+    /* Sticky Control Panel at Bottom */
+    .control-panel {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        top: auto !important;
+        /* Override desktop 'top' to prevent stretching */
+        width: 100%;
+        z-index: 1000;
+        background: rgba(44, 62, 80, 0.95);
+        backdrop-filter: blur(10px);
+        border-top: 2px solid #f1c40f;
+        padding: 10px;
+        display: flex;
+        gap: 10px;
+        justify-content: space-between;
+        box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.5);
+        flex-direction: row !important;
+        /* Force row layout */
+        align-items: center;
+        /* Center items vertically */
+        padding: 8px 12px;
+    }
+
+    /* Inner Mobile Layout */
+    .cp-player-info {
+        border-bottom: none !important;
+        padding-bottom: 0 !important;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .cp-player-avatar {
+        width: 36px !important;
+        height: 36px !important;
+        font-size: 1.2rem !important;
+        margin: 0 !important;
+    }
+
+    .cp-player-name,
+    .cp-player-money-label {
+        display: none;
+        /* Hide name/money text to save space - avatar info is enough or uses simplified view */
+    }
+
+    /* Or show compact money? */
+    .cp-mobile-money {
+        display: block;
+        font-size: 0.8rem;
+        font-weight: bold;
+        color: #27ae60;
+    }
+
+    .cp-dice-container {
+        padding: 0 !important;
+        display: flex;
+        align-items: center;
+    }
+
+    .cp-dice-box {
+        min-height: unset !important;
+        flex-direction: row !important;
+        gap: 8px !important;
+    }
+
+    .cp-dice-value {
+        width: 40px !important;
+        height: 40px !important;
+        font-size: 1.5rem !important;
+        border-width: 2px !important;
+    }
+
+    .cp-dice-label {
+        display: none !important;
+        /* Hide "Rolled: X" text */
+    }
+
+    /* Adjust styling for buttons inside control panel */
+    .control-panel button {
+        flex: 1;
+        padding: 0 !important;
+        height: 40px;
+        font-size: 0.9rem !important;
+        white-space: nowrap;
+    }
+
+    /* Status message - move to top or simplify */
+    .cp-status {
+        position: absolute;
+        top: -25px;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        color: white !important;
+        text-shadow: 0 1px 2px black;
+        pointer-events: none;
+        font-size: 0.8rem !important;
+        padding: 2px 0;
+        background: rgba(0, 0, 0, 0.3);
+    }
+
+    /* Ensure modal is full screen / accessible */
+    .modal-overlay {
+        align-items: flex-end !important;
+        /* Bottom sheet style? or center is fine */
+    }
+
+    /* Hide sidebar on mobile or make it a drawer (TODO) */
+}

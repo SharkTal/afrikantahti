@@ -1,0 +1,16 @@
+{
+    "rules": {
+        "rooms": {
+            ".read": true,
+            ".write": false,
+            "$roomCode": {
+                ".read": true,
+                ".write": true
+            }
+        },
+        "ai_memory": {
+            ".read": true,
+            ".write": true
+        }
+    }
+}
