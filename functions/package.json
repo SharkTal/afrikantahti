@@ -1,6 +1,7 @@
 {
     "name": "functions",
     "description": "Cloud Functions for Afrikan Tähti",
+    "license": "MIT",
     "scripts": {
         "serve": "firebase emulators:start --only functions",
         "shell": "firebase functions:shell",
